@@ -8,3 +8,13 @@ Route::get('/', function () {
 });
 
 Route::resource('test', SampleController::class);
+
+//service provider
+Route::get('/service', function(){
+    dd(app('first_class'));
+});
+
+//custom service provider
+Route::get('/testservice', function(){
+    app()->make('test_service');
+});
